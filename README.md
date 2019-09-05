@@ -1,5 +1,7 @@
 # BootSoundNX
 
+[![Watch the video](https://img.youtube.com/vi/RYmqnQrk8yA/maxresdefault.jpg)](https://youtu.be/RYmqnQrk8yA)
+
 A system module that plays sound on the nintendo switch boot !
 
 ## Notes
