@@ -11,3 +11,4 @@ copy the contents of the release zip to root of the sd card and restart the swit
 ## Change Sound
 to replace the boot sound replace it with your sound in ```/bootloader/sound/bootsound.mp3```
 
+credits: jakibaki
