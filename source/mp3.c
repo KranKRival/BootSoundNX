@@ -162,7 +162,7 @@ void inputPoller(char* file)
         }
 }
 
-void playMp3(const char* file) {
+void playMp3(char* file) {
     initMp3(file);
 
     u32 released_count = 0;
@@ -175,7 +175,7 @@ void playMp3(const char* file) {
     int lastFill = 1;
     while(appletMainLoop() && lastFill)
     {
-		//inputPoller(file);
+		inputPoller(file);
 		
 	    if(Continue)
 		{
