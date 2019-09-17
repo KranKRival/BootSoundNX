@@ -1,8 +1,8 @@
 {
-    "name": "sysmodule",
-    "title_id": "0xAA200000000002AA",
-    "title_id_range_min": "0xAA200000000002AA",
-    "title_id_range_max": "0xAA200000000002AA",
+    "name": "bootsoundnx",
+    "title_id": "0x00FF0000000002AA",
+    "title_id_range_min": "0x00FF0000000002AA",
+    "title_id_range_max": "0x00FF0000000002AA",
     "main_thread_stack_size": "0x000032000",
     "main_thread_priority": 49,
     "default_cpu_id": 3,
