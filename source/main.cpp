@@ -1,22 +1,18 @@
-// Include the most common headers from the C standard library
-#include <time.h>
-#include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
-
-// Include the main libnx system header, for Switch development
-#include <switch.h>
-
-#include <vector>
+#include <stdio.h>
 #include <dirent.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+#include <switch.h>
 
 #include "mp3.h"
 #include "util.h"
 
-// Sysmodules should not use applet*.
-u32 __nx_applet_type = AppletType_None;
+bool onboot = false;
 
-// Adjust size as needed.
+#define ERPT_SAVE_ID 0x80000000000000D1
+#define TITLE_ID 0x00FF0000000002AA
 #define INNER_HEAP_SIZE 0x40000
 size_t nx_inner_heap_size = INNER_HEAP_SIZE;
 char   nx_inner_heap[INNER_HEAP_SIZE];
@@ -55,7 +51,6 @@ void __attribute__((weak)) __appInit(void)
     /*rc = timeInitialize();
     if (R_FAILED(rc))
         fatalSimple(MAKERESULT(Module_Libnx, LibnxError_InitFail_Time));
-
     __libnx_init_time();*/
 
     rc = fsInitialize();
@@ -81,11 +76,11 @@ void __attribute__((weak)) __appExit(void)
 // Main program entrypoint
 int main(int argc, char* argv[])
 {
-    FILE * Soundfile = fopen ("sdmc:///bootloader/sound/bootsound.mp3","r");
+    FILE * Soundfile = fopen ("sdmc://config/BootSoundNX/sound/bootsound.mp3","r");
     
     if (Soundfile != NULL)
     {
-        playMp3("sdmc:///bootloader/sound/bootsound.mp3");
+        playMp3("sdmc://config/BootSoundNX/sound/bootsound.mp3");
         fclose (Soundfile);
     }
     return 0;
