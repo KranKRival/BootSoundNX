@@ -80,6 +80,7 @@ int main(int argc, char* argv[])
     
     if (Soundfile != NULL)
     {
+	svcSleepThread(6000000000ULL);//Sleep for 5 seconds. This avoids the issue making the sound be choppy
         playMp3("sdmc://config/BootSoundNX/sound/bootsound.mp3");
         fclose (Soundfile);
     }
