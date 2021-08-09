@@ -15,8 +15,8 @@ INCLUDES	:=	include
 EXEFS_SRC	:=	exefs_src
 ROMFS	:=	romfs
 
-export APP_AUTHOR := TheModdersDen
-export APP_VERSION = 0.0.1
+export APP_AUTHOR := KranKRival
+export APP_VERSION = 1.2.0
 
 ARCH	:=	-march=armv8-a -mtune=cortex-a57 -mtp=soft -fPIE
 
