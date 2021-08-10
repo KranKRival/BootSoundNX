@@ -16,4 +16,4 @@ To replace the boot sound replace it with your sound in ```sdmc://config/BootSou
 
 ## Credits
 
-Credits: [jakibaki](https://github.com/jakibaki) & [TheModdersDen](https://github.com/TheModdersDen)
+Credits: [jakibaki](https://github.com/jakibaki), [TheModdersDen](https://github.com/TheModdersDen), & [fennectech](https://github.com/fennectech)

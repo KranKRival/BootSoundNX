@@ -80,6 +80,7 @@ int main(int argc, char* argv[])
     
     if (Soundfile != NULL)
     {
+        svcSleepThread(6000000000ULL);
         playMp3("sdmc://config/BootSoundNX/sound/bootsound.mp3");
         fclose (Soundfile);
     }
