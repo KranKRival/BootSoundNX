@@ -142,18 +142,19 @@ int fillBuf() {
 
 void inputPoller(char* file)
 {
-        hidScanInput();
-        u64 kDown = hidKeysDown(CONTROLLER_P1_AUTO);
-        u64 kHeld = hidKeysHeld(CONTROLLER_P1_AUTO);
+        //hidScanInput();
+		PadState pad;
+        u64 kDown = padGetButtonsDown(&pad);
+        u64 kHeld = padGetButtonsDown(&pad);
 
-        if ((kDown & KEY_MINUS || kDown & KEY_Y) && (kHeld & KEY_MINUS && kHeld & KEY_Y))
+        if ((kDown & HidNpadButton_Minus || kDown & HidNpadButton_Y) && (kHeld & HidNpadButton_Minus && kHeld & HidNpadButton_Y))
         {
 			initMp3(file);
             audoutExit();
 			audoutInitialize();
 			audoutStartAudioOut();
         }
-		if ((kDown & KEY_MINUS || kDown & KEY_X) && (kHeld & KEY_MINUS && kHeld & KEY_X))
+		if ((kDown & HidNpadButton_Minus || kDown & HidNpadButton_X) && (kHeld & HidNpadButton_Minus && kHeld & HidNpadButton_X))
         {
 			//PALY/PAUSE
 			Continue = !Continue;
