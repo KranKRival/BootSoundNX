@@ -9,7 +9,7 @@
 #include "mp3.h"
 #include "util.h"
 
-bool onboot = false;
+//bool onboot = false;
 
 #define ERPT_SAVE_ID 0x80000000000000D1
 #define TITLE_ID 0x00FF0000000002AA
@@ -40,22 +40,22 @@ void __attribute__((weak)) __appInit(void)
     // Initialize default services.
     rc = smInitialize();
     //if (R_FAILED(rc))
-        //fatalLater(MAKERESULT(Module_Libnx, LibnxError_InitFail_SM));
+        //fatalSimple(MAKERESULT(Module_Libnx, LibnxError_InitFail_SM));
 
     // Enable this if you want to use HID.
     rc = hidInitialize();
     //if (R_FAILED(rc))
-        //fatalLater(MAKERESULT(Module_Libnx, LibnxError_InitFail_HID));
+        //fatalSimple(MAKERESULT(Module_Libnx, LibnxError_InitFail_HID));
 
     //Enable this if you want to use time.
     /*rc = timeInitialize();
     if (R_FAILED(rc))
-        fatalSimple(MAKERESULT(Module_Libnx, LibnxError_InitFail_Time));
+        fatalLater(MAKERESULT(Module_Libnx, LibnxError_InitFail_Time));
     __libnx_init_time();*/
 
     rc = fsInitialize();
     //if (R_FAILED(rc))
-        //fatalLater(MAKERESULT(Module_Libnx, LibnxError_InitFail_FS));
+        //fatalSimple(MAKERESULT(Module_Libnx, LibnxError_InitFail_FS));
 
     fsdevMountSdmc();
 }

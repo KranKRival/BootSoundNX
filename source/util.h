@@ -1,5 +1,9 @@
 #include <switch.h>
 
-void fatalLater(Result err);
+/// IPC input header magic
+#define SFCI_MAGIC 0x49434653
 
-//void fatalLater(unsigned int);
+//void fatalLater(Result err);
+
+void fatalSimple(Result error);
+void fatalLater(u64 unsigned_int);
