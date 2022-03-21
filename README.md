@@ -2,6 +2,10 @@
 
 A system module that plays sound on the nintendo switch boot!
 
+## Credits
+
+Credits: [jakibaki](https://github.com/jakibaki) & [TheModdersDen](https://github.com/TheModdersDen)
+
 ## Notes
 
 MP3 Only!
@@ -13,10 +17,6 @@ Copy the contents of the release zip to root of the sd card, and restart the swi
 ## Change Sound
 
 To replace the boot sound replace it with your sound in ```sdmc://config/BootSoundNX/sound/bootsound.mp3```
-
-## Credits
-
-Credits: [jakibaki](https://github.com/jakibaki) & [TheModdersDen](https://github.com/TheModdersDen)
 
 ## Troubleshooting
 
