@@ -8,7 +8,7 @@ MP3 Only!
 
 ## Installation
 
-Copy the contents of the release zip to root of the sd card, enable the sys-module, and restart the switch.
+Copy the contents of the release zip to root of the sd card, and restart the switch.
 
 ## Change Sound
 
