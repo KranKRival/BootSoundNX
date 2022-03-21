@@ -8,7 +8,7 @@ Credits: [jakibaki](https://github.com/jakibaki) & [TheModdersDen](https://githu
 
 ## Notes
 
-This sysmodule supports the '.mp3' extension **ONLY**. Please do not ask for additional file support as I do not have the time to learn how to encode more sound formats to this sys-module. If you don't know how do this, please look here: [link](https://bfy.tw/SlJZ).
+This sysmodule supports the '.mp3' extension **ONLY**. Please do not ask for additional file support as I do not have the time to learn how to encode more sound formats to this sys-module. If you don't know how do this, please look here: [link](https://gprivate.com/5ynap).
 
 ## Installation
 
