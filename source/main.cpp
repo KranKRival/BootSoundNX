@@ -76,7 +76,7 @@ void __attribute__((weak)) __appExit(void)
 // Main program entrypoint
 int main(int argc, char* argv[])
 {
-    FILE * Soundfile = fopen ("sdmc://config/BootSoundNX/sound/bootsound.mp3","r");
+    FILE * Soundfile = fopen ("sdmc://config/BootSoundNX/sound/bootsound.mp3","r+");
     
     if (Soundfile != NULL)
     {

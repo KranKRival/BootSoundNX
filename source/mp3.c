@@ -185,7 +185,7 @@ void playMp3(char* file) {
 		}
 
         for(int curBuf = 0; curBuf < BUF_COUNT/2; curBuf++)
-            audoutWaitPlayFinish(&audout_released_buf, &released_count, 1000000000L);
+            audoutWaitPlayFinish(&audout_released_buf, &released_count, UINT64_MAX);
 
 		// Workaround to find out if the switch just woke up from sleep. If it did clear the buffer in order to prevent issues.
 		time_t newTime = time(NULL);
