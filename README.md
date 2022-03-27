@@ -26,7 +26,7 @@ Copy the contents of the release zip to root of the sd card, and restart the swi
 
 To replace the boot sound, replace it with your sound in ```sdmc://config/BootSoundNX/sound/bootsound.mp3```.
 
-## Regarding Lomg BootSounds
+## Regarding Long BootSounds
 
 This is from a conversation with a tester of this sysmodule named @[pixeltester](https://github.com/pixeltester). Shoutout to this user for this find:
 
