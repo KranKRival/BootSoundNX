@@ -28,7 +28,7 @@ To replace the boot sound, replace it with your sound in ```sdmc://config/BootSo
 
 ## Regarding Long BootSounds
 
-This is from a conversation with a tester of this sysmodule named @[pixeltester](https://github.com/pixeltester). Shoutout to this user for this find:
+This is from a conversation with a tester of this sysmodule named @[pixeltester](https://github.com/pixeltester). Shoutout to that individual for this find:
 
 > Regarding the issue with the gap in the audio, I finally tested a long bootsound with two SD cards on the same Switch and there is quite a large variance as to where the gap occurs. Sandisk = the gap is very early in the bootsound, Samsung = the gap is in the middle of the bootsound.
 
