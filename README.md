@@ -47,6 +47,6 @@ To disable/remove the sysmodule, please do one of the three following
 **OR**
 
 - Download this handy boot payload and remove all sysmodules by starting it and try again (**last resort**): [CommonProblemResolver](https://github.com/Team-Neptune/CommonProblemResolver/releases).
-  - Stick it in your ```bootloader/payloads``` folder.
+  - Stick it in your ```bootloader/payloads``` folder to use it in Hekate.
 
 Also, there is a possible bug I have encountered in which certain MP3 files play at a wierd pitch and speed. I am investigating this in my spare time, but if someone finds the cause, or has issues with it, please let me know by creating an issue.
