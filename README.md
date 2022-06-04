@@ -12,7 +12,7 @@ This sysmodule supports the '.mp3' extension **ONLY**. Please do not ask for add
 
 ## Latest Tested Version (BootSoundNX v1.3.0)
 
-Tested on Atmosphere 1.3.0 Pre-release (found [here](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.3.0)), Hekate v5.7.2 (found [here](https://github.com/CTCaer/hekate/releases/tag/v5.7.2)) and HOS 14.0.0.
+Tested on Atmosphere 1.3.2 (found [here](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.3.2)), Hekate v5.7.2 (found [here](https://github.com/CTCaer/hekate/releases/tag/v5.7.2)) and HOS 14.1.1.
 
 It works. There are a few things which I might need to iron out, but it works.
 
