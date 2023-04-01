@@ -4,7 +4,7 @@ A system module that plays sound on the nintendo switch boot!
 
 ## Credits
 
-Credits: [jakibaki](https://github.com/jakibaki) & [TheModdersDen](https://github.com/TheModdersDen)
+Credits: [jakibaki](https://github.com/jakibaki), [KranKRival](https://github.com/KranKRival), and [TheModdersDen](https://github.com/TheModdersDen)
 
 ## Notes
 
@@ -50,3 +50,20 @@ To disable/remove the sysmodule, please do one of the three following
   - Stick it in your ```bootloader/payloads``` folder to use it in Hekate.
 
 Also, there is a possible bug I have encountered in which certain MP3 files play at a wierd pitch and speed. I am investigating this in my spare time, but if someone finds the cause, or has issues with it, please let me know by creating an issue.
+
+## Changelog
+
+To view the changelog see the [_CHANGELOG.md](_CHANGELOG.md) file.
+
+## ToDo/Future Plans
+
+To view the ToDo/Future Plans see the [docs/TODO.md](docs/TODO.md) file.
+
+## License
+
+This project is licensed under the Apache 2.0 License - see the [LICENSE.md](LICENSE.md) file for details.
+
+## Acknowledgments
+
+- [jakibaki](https://www.github.com/jakibaki) for the original idea (from [this](https://gbatemp.net/threads/boot-sound-on-nx.540201/) thread).
+- [KranKRival](https://www.github.com/KranKRival) for the original code repository
