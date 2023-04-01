@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "/opt/devkitpro/libnx/include",
+                "/opt/devkitpro/libnx/include/switch",
+                "/opt/devkitpro/libnx/include/switch/arm",
+                "/opt/devkitpro/libnx/include/sys",
+                "/opt/devkitpro/portlibs/switch/include",
+                "/opt/devkitpro/portlibs/switch/include/SDL2"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c17",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "linux-clang-x64"
+        }
+    ],
+    "version": 4
+}
