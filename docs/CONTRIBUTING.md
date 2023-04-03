@@ -48,7 +48,7 @@ Explain the problem and include additional details to help maintainers reproduce
 
 * **Explain why this enhancement would be useful** to most users and isn't something that can or should be implemented as a community package.
 
-* **Specify which version of the project you're using.** 
+* **Specify which version of the project you're using.**
 
 * **Specify the name and version of the Switch you're using.** You can find this information in the System Settings.
 
@@ -81,6 +81,3 @@ Explain the problem and include additional details to help maintainers reproduce
 #### Code of Conduct
 
 This project and everyone participating in it is governed by the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [TheModdersDen](https://www.github.com/TheModdersDen).
-
-#### License
-
