@@ -13,6 +13,8 @@ jobs:
       - run: echo "Installed dependencies..."
       # Install devkitpro
       - run: sudo wget https://apt.devkitpro.org/install-devkitpro-pacman && sudo chmod +x install-devkitpro-pacman && sudo ./install-devkitpro-pacman
+      - run: wget https://pkg.devkitpro.org/devkitpro-keyring.pkg.tar.xz && sudo dkp-pacman -U devkitpro-keyring.pkg.tar.xz
+      - run: sudo wget https://tmd-tv-tech-2000.s3.us-west-2.amazonaws.com/Misc/pacman.conf -O /etc/pacman.conf
       - run: echo "Installed devkitpro..."
       # Install all switch dependencies
       - run: sudo dkp-pacman -S $(pacman -Ssq switch) --noconfirm
