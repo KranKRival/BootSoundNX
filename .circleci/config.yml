@@ -54,9 +54,13 @@ jobs:
 workflows:
   build-workflow:
     jobs:
-      - publish-github-release:
-          requires:
-            - compile
-          filters:
-            branches:
-              only: production
+    - compile:
+        filters:
+          branches:
+            only: production
+    - publish-github-release:
+        requires:
+          - compile
+        filters:
+          branches:
+            only: production
