@@ -52,10 +52,6 @@ jobs:
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
 workflows:
-  - build-workflow:
-      filters:
-        branches:
-          ignore: development
   build-workflow:
     jobs:
       - publish-github-release:
