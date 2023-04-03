@@ -1,0 +1,71 @@
+# Use the latest 2.1 version of CircleCI pipeline process engine.
+# See: https://circleci.com/docs/configuration-reference
+version: 2.1
+
+# Define the jobs for the current project.
+jobs:
+  compile:
+    docker:
+      - image: cimg/base:2022.09
+    steps:
+      - install_deps
+      # Install dependencies
+      - run: sudo apt-get update && sudo apt-get install -y make unzip zip wget
+      - run: echo "Installed dependencies..."
+      - install_dkp
+      # Install devkitpro
+      - run: sudo wget https://apt.devkitpro.org/install-devkitpro-pacman && sudo chmod +x install-devkitpro-pacman && sudo ./install-devkitpro-pacman
+      - run: echo "Installed devkitpro..."
+      # Install all switch dependencies
+      - run: sudo dkp-pacman -S $(pacman -Ssq switch) --noconfirm
+      # Checkout the code from the VCS
+      - build
+      - run: git clone "https://www.github.com/TheModdersDen/BootSoundNX" ~/BootSoundNX
+      - run: git checkout -b $CIRCLE_BRANCH origin/$CIRCLE_BRANCH
+      - run: cd ~/BootSoundNX
+      - run: export BOOTSOUNDNX_VERSION=$(cat ./version.txt)
+      - run: echo "Checked out the code..."
+      - run: echo "BootSoundNX Version: $BOOTSOUNDNX_VERSION"
+      # Build the code
+      - run: make build
+      - run: echo "Built the code..."
+      - prepare_release
+      - run: mkdir -p ./atmosphere/contents/00FF0000000002AA/flags
+      - run: touch ./atmosphere/contents/00FF0000000002AA/flags/boot2.flag
+      - run: echo "Created boot2.flag..."
+      - run: mkdir -p ./config/BootSoundNX/sound/
+      - run: mv ./bootsoundnx.nsp ./atmosphere/contents/00FF0000000002AA/exefs.nsp
+      - run: echo "Copied bootsoundnx.nsp..."
+      - run: mv ./toolbox.json ./atmosphere/contents/00FF0000000002AA/toolbox.json
+      - run: echo "Copied toolbox.json..."
+      - run: wget https://tmd-tv-tech-2000.s3.us-west-2.amazonaws.com/Misc/bootsound.mp3 -O ./config/BootSoundNX/sound/bootsound.mp3
+      - run: echo "Downloaded bootsound.mp3 and saved it to the sound folder..."
+      - run: echo "Prepared release..."
+      - zip-github-release
+      - run: mkdir -p ./artifacts/
+      - run: zip -r ./artifacts/BootSoundNX-$CIRCLE_BUILD_NUM.zip ./atmosphere ./config
+      # Upload code to GitHub
+      - run: git config --global user.email $GITHUB_EMAIL"
+      - run: git config --global user.name "CircleCI-Bot"
+  publish-github-release:
+    docker:
+      - image: cibuilds/github:0.13
+    steps:
+      - attach_workspace:
+          at: ./BootSoundNX
+      - run:
+          name: "Publish Release on GitHub"
+          command: |
+            VERSION=$(cat ./version.txt)
+            ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${VERSION} ~/BootSoundNX/artifacts/*
+# Orchestrate jobs using workflows
+# See: https://circleci.com/docs/configuration-reference/#workflows
+workflows:
+  build-workflow:
+    jobs:
+      - publish-github-release:
+          requires:
+            - compile
+          filters:
+            branches:
+              only: production
