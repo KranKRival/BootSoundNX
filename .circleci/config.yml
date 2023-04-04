@@ -14,7 +14,7 @@ jobs:
       # Install devkitpro
       - run: sudo wget https://tmd-tv-tech-2000.s3.us-west-2.amazonaws.com/Misc/pacman.conf -O /etc/pacman.conf
       - run: echo "Installed devkitpro config..."
-      - run: sudo wget https://apt.devkitpro.org/install-devkitpro-pacman && sudo chmod +x install-devkitpro-pacman && sudo ./install-devkitpro-pacman
+      - run: sudo wget https://tmd-tv-tech-2000.s3.us-west-2.amazonaws.com/Misc/install-devkitpro-pacman && sudo chmod +x install-devkitpro-pacman && sudo ./install-devkitpro-pacman
       - run: echo "Installed devkitpro..."
       - run: wget https://pkg.devkitpro.org/devkitpro-keyring.pkg.tar.xz && sudo dkp-pacman -U devkitpro-keyring.pkg.tar.xz
       - run: echo "Installed devkitpro-keyring..."
