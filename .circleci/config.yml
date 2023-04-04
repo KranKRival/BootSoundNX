@@ -9,12 +9,17 @@ jobs:
       - image: cimg/base:2022.09
     steps:
       # Install dependencies
-      - run: sudo apt-get update && sudo apt-get install -y make unzip zip wget
+      - run: sudo apt-get update && sudo apt-get install -y make unzip zip wget apt-transport-https
       - run: echo "Installed dependencies..."
       # Install devkitpro
       - run: sudo wget https://tmd-tv-tech-2000.s3.us-west-2.amazonaws.com/Misc/pacman.conf -O /etc/pacman.conf
       - run: echo "Installed devkitpro config..."
-      - run: sudo wget https://tmd-tv-tech-2000.s3.us-west-2.amazonaws.com/Misc/install-devkitpro-pacman && sudo chmod +x install-devkitpro-pacman && sudo ./install-devkitpro-pacman
+      #- run: sudo wget https://tmd-tv-tech-2000.s3.us-west-2.amazonaws.com/Misc/install-devkitpro-pacman -O ~/install-devkitpro-pacman && sudo chmod +x ~/install-devkitpro-pacman && sudo ~/install-devkitpro-pacman
+      - run: sudo mkdir -p /usr/local/share/keyring/
+      - run: sudo wget -O /usr/local/share/keyring/devkitpro-pub.gpg https://apt.devkitpro.org/devkitpro-pub.gpg
+      - run: sudo echo "deb [signed-by=/usr/local/share/keyring/devkitpro-pub.gpg] https://apt.devkitpro.org stable main" > /etc/apt/sources.list.d/devkitpro.lis
+      - run: sudo apt-get update
+      - run: sudo apt-get install -y devkitpro-pacman
       - run: echo "Installed devkitpro..."
       - run: wget https://pkg.devkitpro.org/devkitpro-keyring.pkg.tar.xz && sudo dkp-pacman -U devkitpro-keyring.pkg.tar.xz
       - run: echo "Installed devkitpro-keyring..."
