@@ -18,6 +18,7 @@ jobs:
       - run: sudo mkdir -p /usr/local/share/keyring/
       - run: sudo wget -O /usr/local/share/keyring/devkitpro-pub.gpg https://apt.devkitpro.org/devkitpro-pub.gpg
       - run: sudo touch /etc/apt/sources.list.d/devkitpro.list
+      - run: sudo chopmod 777 /etc/apt/sources.list.d/devkitpro.list
       - run: sudo echo "deb [signed-by=/usr/local/share/keyring/devkitpro-pub.gpg] https://apt.devkitpro.org stable main" > /etc/apt/sources.list.d/devkitpro.list
       - run: sudo apt-get update
       - run: sudo apt-get install -y devkitpro-pacman
