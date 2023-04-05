@@ -6,29 +6,11 @@ version: 2.1
 jobs:
   compile:
     docker:
-      - image: cimg/base:2022.09
+      - image: devkitpro/devkitarm:latest
     steps:
       # Install dependencies
-      - run: sudo apt-get update && sudo apt-get install -y make unzip zip wget apt-transport-https
+      - run: sudo apt-get update && sudo apt-get install -y unzip zip
       - run: echo "Installed dependencies..."
-      # Install devkitpro
-      - run: sudo wget https://tmd-tv-tech-2000.s3.us-west-2.amazonaws.com/Misc/pacman.conf -O /etc/pacman.conf
-      - run: echo "Installed devkitpro config..."
-      #- run: sudo wget https://tmd-tv-tech-2000.s3.us-west-2.amazonaws.com/Misc/install-devkitpro-pacman -O ~/install-devkitpro-pacman && sudo chmod +x ~/install-devkitpro-pacman && sudo ~/install-devkitpro-pacman
-      - run: sudo mkdir -p /usr/local/share/keyring/
-      - run: sudo wget -O /usr/local/share/keyring/devkitpro-pub.gpg https://apt.devkitpro.org/devkitpro-pub.gpg
-      - run: sudo touch /etc/apt/sources.list.d/devkitpro.list
-      - run: sudo chmod 777 /etc/apt/sources.list.d/devkitpro.list
-      - run: sudo echo "deb [signed-by=/usr/local/share/keyring/devkitpro-pub.gpg] https://apt.devkitpro.org stable main" > /etc/apt/sources.list.d/devkitpro.list
-      - run: sudo apt-get update
-      - run: sudo apt-get install -y devkitpro-pacman
-      - run: echo "Installed devkitpro..."
-      - run: wget https://pkg.devkitpro.org/devkitpro-keyring.pkg.tar.xz && sudo dkp-pacman -U devkitpro-keyring.pkg.tar.xz
-      - run: echo "Installed devkitpro-keyring..."
-      - run: sudo dkp-pacman -Syu --noconfirm
-      - run: echo "Updated devkitpro..."
-      # Install all switch dependencies
-      - run: sudo dkp-pacman -S $(pacman -Ssq switch) --noconfirm
       # Checkout the code from the VCS
       - run: git clone "https://www.github.com/TheModdersDen/BootSoundNX" ~/BootSoundNX
       - run: git checkout -b $CIRCLE_BRANCH origin/$CIRCLE_BRANCH
